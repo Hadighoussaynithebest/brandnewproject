@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exterminator — Next-gen Antivirus</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="assets/favicon.svg">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo" aria-label="Exterminator">
+      <img src="assets/logo-new.svg" alt="Exterminator logo" class="logo-img">
+    </div>
+    <nav class="nav">
+      <a href="#features">Features</a>
+      <a href="about.html">About</a>
+      <a href="#download" class="cta">Download</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Exterminator</h1>
+        <p class="tag">AI-powered protection for modern threats — fast, lightweight, and privacy-first.</p>
+        <div class="hero-ctas">
+          <a href="#capabilities" class="btn primary">See Capabilities</a>
+          <a href="#download" class="btn ghost">Download</a>
+        </div>
+        <ul class="badges">
+          <li>Zero-day defense</li>
+          <li>Cloud intelligence</li>
+          <li>Minimal footprint</li>
+          <li>Privacy-first</li>
+        </ul>
+      </div>
+
+      <div class="hero-right">
+        <div class="device">
+          <canvas id="scanCanvas" width="520" height="360" aria-label="Scan visual"></canvas>
+          <div class="shield" aria-hidden="true">
+            <svg viewBox="0 0 120 120" class="shield-svg">
+              <defs>
+                <linearGradient id="g" x1="0" x2="1">
+                  <stop offset="0" stop-color="#00f5ff" />
+                  <stop offset="1" stop-color="#7c4dff" />
+                </linearGradient>
+              </defs>
+              <circle cx="60" cy="60" r="40" fill="url(#g)" opacity="0.12"></circle>
+              <path d="M60 20 L80 32 L88 60 L60 100 L32 60 L40 32 Z" fill="#0ff" opacity="0.18"></path>
+            </svg>
+            <div class="shield-label">Shield Active</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2>Smart Features</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>AI Threat Detection</h3>
+          <p>Behavioral analysis catches evasive threats missed by signatures.</p>
+        </article>
+        <article class="card">
+          <h3>Cloud Sandbox</h3>
+          <p>Run suspicious files in an isolated cloud environment for safe analysis.</p>
+        </article>
+        <article class="card">
+          <h3>Auto-Remediation</h3>
+          <p>One-click cleanup and rollback to a healthy state.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="capabilities" class="capabilities">
+      <h2>What Exterminator Can Do</h2>
+      <div class="cap-grid">
+        <div class="cap">
+          <h4>Real-time Protection</h4>
+          <p>Monitors file activity and process behavior in real time to block malicious actions.</p>
+        </div>
+        <div class="cap">
+          <h4>Heuristic & AI Analysis</h4>
+          <p>Machine-learning models detect novel threats by behavior and code patterns.</p>
+        </div>
+        <div class="cap">
+          <h4>Cloud Sandbox</h4>
+          <p>Uploads suspicious samples to a secure sandbox for deep inspection.</p>
+        </div>
+        <div class="cap">
+          <h4>Fast Incident Response</h4>
+          <p>Quarantine, rollback, and clean — with safe confirmation flows and detailed logs.</p>
+        </div>
+        <div class="cap">
+          <h4>Lightweight Footprint</h4>
+          <p>Designed to be low CPU/memory so it won’t slow your workflows.</p>
+        </div>
+        <div class="cap">
+          <h4>Privacy Aware</h4>
+          <p>Local analysis by default; cloud features are opt-in and anonymized.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download">
+      <h2>Protect Your System</h2>
+      <p>Download Exterminator and get advanced protection in minutes.</p>
+      <div class="download-buttons" style="display:flex;gap:12px;justify-content:center;margin-top:14px;flex-wrap:wrap;">
+        <a class="btn primary" href="exterminator_app.zip" id="appZipLink">Download App (zip)</a>
+      </div>
+    </section>
+
+    <!-- Developer content moved to about.html -->
+  </main>
+
+  <footer class="site-footer">
+    <small>© Exterminator 2025 — Built for speed and safety.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

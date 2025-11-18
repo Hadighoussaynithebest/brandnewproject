@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About the Developer — Hadi Ghoussayni</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo"><img src="assets/logo-new.svg" alt="Exterminator logo" class="logo-img"></div>
+    <nav class="nav">
+      <a href="project.html">Home</a>
+      <a href="#" class="active">About</a>
+      <a href="project.html#download" class="cta">Download</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="about-inner">
+        <div class="dev-avatar" aria-hidden="true">
+          <!-- simple SVG avatar -->
+          <svg viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="av" x1="0" x2="1"><stop offset="0" stop-color="#00f5ff"/><stop offset="1" stop-color="#7c4dff"/></linearGradient>
+            </defs>
+            <rect width="120" height="120" rx="22" fill="url(#av)"/>
+            <circle cx="60" cy="44" r="18" fill="#041426" opacity="0.95" />
+            <path d="M28 92c8-12 24-18 32-18s24 6 32 18" fill="#041426" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="about-copy">
+          <h1>Hadi Ghoussayni</h1>
+          <p class="about-lead">I am currently a high school student driven by a deep curiosity for artificial intelligence and cybersecurity — passionately building small projects and learning systems to prepare for advanced study.</p>
+          <p class="about-sub">Focused on practical experience, I explore applied AI, secure coding, and system defenses, aiming to contribute to research and real-world security solutions in the future.</p>
+          <div class="dev-links">
+            <a class="btn" href="#contact" aria-label="Contact">Contact</a>
+            <a class="btn ghost" href="#projects" aria-label="Projects">Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Planned Projects</h2>
+      <div class="project-grid">
+        <article class="proj card">
+          <h3>Advanced AI-driven Antivirus</h3>
+          <p>Develop a next-generation antivirus using behavior-based ML models and real-time threat hunting.</p>
+          <span class="badge">Antivirus</span>
+        </article>
+        <article class="proj card">
+          <h3>Lightweight Endpoint Protector</h3>
+          <p>A minimal-footprint agent for continuous monitoring and fast remediation on endpoints.</p>
+          <span class="badge">Agent</span>
+        </article>
+        <article class="proj card">
+          <h3>Mobile Secure Defender</h3>
+          <p>Mobile-focused security app combining privacy tools and malware detection.</p>
+          <span class="badge">Mobile</span>
+        </article>
+        <article class="proj card">
+          <h3>Privacy & Telemetry Tools</h3>
+          <p>Utilities that help users control telemetry and improve privacy while keeping security strong.</p>
+          <span class="badge">Privacy</span>
+        </article>
+        <article class="proj card">
+          <h3>System Hardening Toolkit</h3>
+          <p>Tools and scripts to harden systems against common attack vectors for power users and admins.</p>
+          <span class="badge">Utilities</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <div class="contact-inner">
+        <div class="contact-form-card card">
+          <p class="muted">Want to reach out? Send a message below and I'll reply as soon as possible.</p>
+          <!-- Replace the action URL with your Formspree form endpoint or your server endpoint -->
+          <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Send Message</button>
+              <span id="formStatus" class="form-status" aria-live="polite"></span>
+            </div>
+          </form>
+          <p class="muted small">If you prefer, email directly: <a href="mailto:hadighoussayni@gmail.com">hadighoussayni@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© Hadi Ghoussayni — Exterminator 2025.</small>
+  </footer>
+
+</body>
+<script>
+// Contact form handler: submit with fetch to the form action, show status messages.
+document.addEventListener('DOMContentLoaded', function(){
+  const form = document.getElementById('contactForm');
+  const statusEl = document.getElementById('formStatus');
+  if(!form) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    statusEl.textContent = 'Sending...';
+    const action = form.getAttribute('action');
+    const data = new FormData(form);
+    try{
+      const res = await fetch(action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: data
+      });
+      if(res.ok){
+        form.reset();
+        statusEl.textContent = 'Thanks — your message was sent.';
+      } else {
+        const txt = await res.text();
+        statusEl.textContent = 'Could not send message. Please use the email link.';
+      }
+    } catch(err){
+      statusEl.textContent = 'Network error. Please try again or use the email link.';
+    }
+    setTimeout(()=>{ statusEl.textContent=''; }, 6000);
+  });
+});
+</script>
+</html>

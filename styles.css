@@ -1,0 +1,111 @@
+:root{
+  --bg-1: #0b1020;
+  --bg-2: #071027;
+  --accent-1: #00f5ff;
+  --accent-2: #7c4dff;
+  --glass: rgba(255,255,255,0.04);
+  --muted: #9aa3b2;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  background:radial-gradient(1200px 600px at 10% 10%, rgba(124,77,255,0.06), transparent),
+             linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color:#e6eef8; -webkit-font-smoothing:antialiased;
+}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px}
+.logo{display:flex;align-items:center;gap:12px;min-width:0}
+.logo-img{height:44px;width:auto;display:block;max-width:280px}
+.nav a{color:var(--muted);margin-left:18px;text-decoration:none}
+.nav a.cta{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));padding:8px 12px;border-radius:8px;color:#041426}
+
+.hero{display:flex;gap:36px;align-items:center;padding:36px;max-width:1200px;margin:20px auto}
+.hero-left{flex:1}
+.hero-right{flex:1;display:flex;justify-content:center}
+h1{font-size:52px;margin:0 0 8px;letter-spacing:0.6px}
+.tag{color:var(--muted);margin:8px 0 18px;font-size:18px}
+.btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+.btn.primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#041426;box-shadow:0 8px 30px rgba(124,77,255,0.12)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent-1)}
+.hero-ctas{display:flex;gap:12px;margin:18px 0}
+.badges{list-style:none;padding:0;margin:16px 0 0;display:flex;gap:12px}
+.badges li{background:var(--glass);padding:8px 10px;border-radius:8px;color:var(--muted);font-size:14px}
+
+.device{position:relative;width:520px;height:360px;border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(2,6,23,0.6);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
+#scanCanvas{display:block;width:100%;height:100%;background:linear-gradient(180deg, rgba(3,6,23,0.4), rgba(2,5,15,0.6));}
+.shield{position:absolute;left:50%;transform:translateX(-50%);bottom:18px;display:flex;flex-direction:column;align-items:center}
+.shield-svg{width:98px;height:98px;filter:drop-shadow(0 10px 30px rgba(124,77,255,0.12));}
+.shield-label{margin-top:6px;color:var(--accent-1);font-weight:700}
+
+.features{padding:40px 20px;max-width:1100px;margin:12px auto}
+.features h2{margin:4px 0 18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,0.4);transform:translateY(0);transition:transform .28s ease,box-shadow .28s ease}
+.card:hover{transform:translateY(-8px);box-shadow:0 22px 60px rgba(0,0,0,0.6)}
+.card h3{margin:0 0 6px}
+.card p{color:var(--muted);margin:0}
+
+.scan-panel{padding:28px 20px;max-width:1000px;margin:12px auto;background:linear-gradient(90deg, rgba(124,77,255,0.03), transparent);border-radius:12px}
+.scan-controls{display:flex;align-items:center;gap:18px}
+.progress{flex:1}
+.progress-bar{height:18px;background:rgba(255,255,255,0.03);border-radius:999px;position:relative;overflow:hidden}
+.progress-bar::after{content:'';position:absolute;left:0;top:0;height:100%;width:0;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));transition:width .25s ease}
+.progress-bar span{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:12px;color:rgba(4,20,38,0.92);font-weight:700}
+
+/* Capabilities section */
+.capabilities{padding:40px 20px;max-width:1100px;margin:12px auto}
+.cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.cap{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+.cap h4{margin:0 0 8px}
+.cap p{color:var(--muted);margin:0}
+
+.download{padding:28px 20px;text-align:center}
+.site-footer{text-align:center;padding:20px;color:var(--muted)}
+
+/* About page styles */
+.about-hero{padding:48px 20px;max-width:1100px;margin:20px auto}
+.about-inner{display:flex;gap:28px;align-items:center}
+.dev-avatar{flex:0 0 140px}
+.about-copy{flex:1}
+.about-copy h1{margin:0 0 8px;font-size:32px}
+.about-lead{font-size:16px;color:#e6eef8;margin:0 0 10px}
+.about-sub{color:var(--muted);margin:0 0 12px}
+.dev-links{display:flex;gap:12px;margin-top:12px}
+.dev-links .btn{padding:10px 14px;border-radius:10px}
+
+/* Projects */
+.projects{padding:32px 20px;max-width:1100px;margin:10px auto}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:12px}
+.proj.card{padding:16px}
+.proj .badge{display:inline-block;margin-top:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-weight:700;font-size:12px}
+
+/* Contact */
+.contact{padding:32px 20px;max-width:900px;margin:20px auto}
+.contact-inner{display:flex;gap:20px}
+.contact-form-card{flex:1;padding:18px}
+.contact-form-card label{display:block;margin-top:12px;color:var(--muted);font-size:13px}
+.contact-form-card input,.contact-form-card textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#e6eef8}
+.form-actions{display:flex;align-items:center;gap:12px;margin-top:12px}
+.form-status{color:var(--muted);font-size:14px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* small screens about page */
+@media (max-width:900px){
+  .about-inner{flex-direction:column;align-items:flex-start}
+  .dev-avatar{flex:0 0 auto}
+}
+
+/* Developer section */
+.developer{padding:28px 20px;max-width:900px;margin:18px auto}
+.dev-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.35);display:flex;flex-direction:column;gap:12px}
+.dev-name{font-size:20px;font-weight:800;color:var(--accent-1);letter-spacing:1px}
+.dev-bio{color:var(--muted);font-size:15px;line-height:1.45;margin:0;max-width:78ch}
+
+/* small screens */
+@media (max-width:900px){
+  .hero{flex-direction:column;gap:18px;padding:18px}
+  .device{width:92%;height:260px}
+  h1{font-size:36px}
+}
